@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 
+import day1 from "./day1";
 import { DayFunc, DayPart } from "./types";
 import { PerformanceMonitor } from "./shared/helpers";
 
@@ -9,6 +10,7 @@ type DaysDictionary = {
 };
 
 const days: DaysDictionary = {
+  "1": day1,
 };
 
 const day = process.argv[2];
