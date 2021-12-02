@@ -9,13 +9,13 @@ forward 2`;
 
 describe("day2", () => {
   describe("first part", () => {
-    it.skip("satisfies test data", () => {
-      expect(day2("a", TEST_DATA)).toBe("2");
+    it("satisfies test data", () => {
+      expect(day2("a", TEST_DATA)).toBe("150");
     });
   });
   describe("second part", () => {
-    it.skip("satisfies test data", () => {
-      expect(day2("b", TEST_DATA)).toBe("1");
+    it("satisfies test data", () => {
+      expect(day2("b", TEST_DATA)).toBe("900");
     });
   });
 });
