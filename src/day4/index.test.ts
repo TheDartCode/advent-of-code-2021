@@ -1,3 +1,4 @@
+import { parseInput } from "./helpers";
 import day4 from "./index";
 
 const TEST_DATA = `7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,19,3,26,1
@@ -22,14 +23,164 @@ const TEST_DATA = `7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,
 `;
 
 describe("day4", () => {
+  describe("helpers", () => {
+    describe("parseInput", () => {
+      it("parses game input correctly", () => {
+        expect(parseInput(TEST_DATA)).toEqual({
+          numbers: [
+            7,
+            4,
+            9,
+            5,
+            11,
+            17,
+            23,
+            2,
+            0,
+            14,
+            21,
+            24,
+            10,
+            16,
+            13,
+            6,
+            15,
+            25,
+            12,
+            22,
+            18,
+            20,
+            8,
+            19,
+            3,
+            26,
+            1,
+          ],
+          boards: [
+            [
+              [
+                { value: 22, marked: false },
+                { value: 13, marked: false },
+                { value: 17, marked: false },
+                { value: 11, marked: false },
+                { value: 0, marked: false },
+              ],
+              [
+                { value: 8, marked: false },
+                { value: 2, marked: false },
+                { value: 23, marked: false },
+                { value: 4, marked: false },
+                { value: 24, marked: false },
+              ],
+              [
+                { value: 21, marked: false },
+                { value: 9, marked: false },
+                { value: 14, marked: false },
+                { value: 16, marked: false },
+                { value: 7, marked: false },
+              ],
+              [
+                { value: 6, marked: false },
+                { value: 10, marked: false },
+                { value: 3, marked: false },
+                { value: 18, marked: false },
+                { value: 5, marked: false },
+              ],
+              [
+                { value: 1, marked: false },
+                { value: 12, marked: false },
+                { value: 20, marked: false },
+                { value: 15, marked: false },
+                { value: 19, marked: false },
+              ],
+            ],
+            [
+              [
+                { value: 3, marked: false },
+                { value: 15, marked: false },
+                { value: 0, marked: false },
+                { value: 2, marked: false },
+                { value: 22, marked: false },
+              ],
+              [
+                { value: 9, marked: false },
+                { value: 18, marked: false },
+                { value: 13, marked: false },
+                { value: 17, marked: false },
+                { value: 5, marked: false },
+              ],
+              [
+                { value: 19, marked: false },
+                { value: 8, marked: false },
+                { value: 7, marked: false },
+                { value: 25, marked: false },
+                { value: 23, marked: false },
+              ],
+              [
+                { value: 20, marked: false },
+                { value: 11, marked: false },
+                { value: 10, marked: false },
+                { value: 24, marked: false },
+                { value: 4, marked: false },
+              ],
+              [
+                { value: 14, marked: false },
+                { value: 21, marked: false },
+                { value: 16, marked: false },
+                { value: 12, marked: false },
+                { value: 6, marked: false },
+              ],
+            ],
+            [
+              [
+                { value: 14, marked: false },
+                { value: 21, marked: false },
+                { value: 17, marked: false },
+                { value: 24, marked: false },
+                { value: 4, marked: false },
+              ],
+              [
+                { value: 10, marked: false },
+                { value: 16, marked: false },
+                { value: 15, marked: false },
+                { value: 9, marked: false },
+                { value: 19, marked: false },
+              ],
+              [
+                { value: 18, marked: false },
+                { value: 8, marked: false },
+                { value: 23, marked: false },
+                { value: 26, marked: false },
+                { value: 20, marked: false },
+              ],
+              [
+                { value: 22, marked: false },
+                { value: 11, marked: false },
+                { value: 13, marked: false },
+                { value: 6, marked: false },
+                { value: 5, marked: false },
+              ],
+              [
+                { value: 2, marked: false },
+                { value: 0, marked: false },
+                { value: 12, marked: false },
+                { value: 3, marked: false },
+                { value: 7, marked: false },
+              ],
+            ],
+          ],
+        });
+      });
+    });
+  });
   describe("first part", () => {
-    it.skip("satisfies test data", () => {
-      expect(day4("a", TEST_DATA)).toBe("2");
+    it("satisfies test data", () => {
+      expect(day4("a", TEST_DATA)).toBe("4512");
     });
   });
   describe("second part", () => {
-    it.skip("satisfies test data", () => {
-      expect(day4("b", TEST_DATA)).toBe("1");
+    it("satisfies test data", () => {
+      expect(day4("b", TEST_DATA)).toBe("1924");
     });
   });
 });
