@@ -8,6 +8,7 @@ import day4 from "./day4";
 import day5 from "./day5";
 import day6 from "./day6";
 import day7 from "./day7";
+import day8 from "./day8";
 import { DayFunc, DayPart } from "./types";
 import { PerformanceMonitor } from "./shared/helpers";
 
@@ -23,6 +24,7 @@ const days: DaysDictionary = {
   "5": day5,
   "6": day6,
   "7": day7,
+  "8": day8,
 };
 
 const day = process.argv[2];
