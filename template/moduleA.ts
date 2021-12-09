@@ -1,5 +1,5 @@
-const moduleA = (list) => {
-  return list;
+const moduleA = (input: string) => {
+  return input;
 };
 
 export default moduleA;

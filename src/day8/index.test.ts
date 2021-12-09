@@ -1,35 +1,58 @@
 import day8 from "./index";
+import { deduceConnections } from "./moduleB";
 
-const TEST_DATA = `be cfbegad cbdgef fgaecd cgeb fdcge agebfd fecdb fabcd edb |
-fdgacbe cefdb cefbgd gcbe
-edbfga begcd cbg gc gcadebf fbgde acbgfd abcde gfcbed gfec |
-fcgedb cgb dgebacf gc
-fgaebd cg bdaec gdafb agbcfd gdcbef bgcad gfac gcb cdgabef |
-cg cg fdcagb cbg
-fbegcd cbd adcefb dageb afcb bc aefdc ecdab fgdeca fcdbega |
-efabcd cedba gadfec cb
-aecbfdg fbg gf bafeg dbefa fcge gcbea fcaegb dgceab fcbdga |
-gecf egdcabf bgf bfgea
-fgeab ca afcebg bdacfeg cfaedg gcfdb baec bfadeg bafgc acf |
-gebdcfa ecba ca fadegcb
-dbcfg fgd bdegcaf fgec aegbdf ecdfab fbedc dacgb gdcebf gf |
-cefg dcbef fcge gbcadfe
-bdfegc cbegaf gecbf dfcage bdacg ed bedf ced adcbefg gebcd |
-ed bcgafe cdgba cbgef
-egadfb cdbfeg cegd fecab cgb gbdefca cg fgcdab egfdb bfceg |
-gbdfcae bgc cg cgb
-gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc |
-fgae cfgab fg bagce`;
+const TEST_DATA = `be cfbegad cbdgef fgaecd cgeb fdcge agebfd fecdb fabcd edb | fdgacbe cefdb cefbgd gcbe
+edbfga begcd cbg gc gcadebf fbgde acbgfd abcde gfcbed gfec | fcgedb cgb dgebacf gc
+fgaebd cg bdaec gdafb agbcfd gdcbef bgcad gfac gcb cdgabef | cg cg fdcagb cbg
+fbegcd cbd adcefb dageb afcb bc aefdc ecdab fgdeca fcdbega | efabcd cedba gadfec cb
+aecbfdg fbg gf bafeg dbefa fcge gcbea fcaegb dgceab fcbdga | gecf egdcabf bgf bfgea
+fgeab ca afcebg bdacfeg cfaedg gcfdb baec bfadeg bafgc acf | gebdcfa ecba ca fadegcb
+dbcfg fgd bdegcaf fgec aegbdf ecdfab fbedc dacgb gdcebf gf | cefg dcbef fcge gbcadfe
+bdfegc cbegaf gecbf dfcage bdacg ed bedf ced adcbefg gebcd | ed bcgafe cdgba cbgef
+egadfb cdbfeg cegd fecab cgb gbdefca cg fgcdab egfdb bfceg | gbdfcae bgc cg cgb
+gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce`;
 
 describe("day8", () => {
   describe("first part", () => {
-    it.skip("satisfies test data", () => {
-      expect(day8("a", TEST_DATA)).toBe("2");
+    it("satisfies test data", () => {
+      expect(day8("a", TEST_DATA)).toBe("26");
+    });
+  });
+  describe("#deduceConnections", () => {
+    it("finds the correct wire/segment connections", () => {
+      expect(
+        deduceConnections(
+          [
+            "acedgfb",
+            "cdfbe",
+            "gcdfa",
+            "fbcad",
+            "dab",
+            "cefabd",
+            "cdfgeb",
+            "eafb",
+            "cagedb",
+            "ab",
+          ],
+          ["cdfeb", "fcadb", "cdfeb", "cdbaf"]
+        )
+      ).toEqual({
+        ab: 1,
+        abcdef: 9,
+        abcdefg: 8,
+        abcdeg: 0,
+        abcdf: 3,
+        abd: 7,
+        abef: 4,
+        acdfg: 2,
+        bcdef: 5,
+        bcdefg: 6,
+      });
     });
   });
   describe("second part", () => {
-    it.skip("satisfies test data", () => {
-      expect(day8("b", TEST_DATA)).toBe("1");
+    it("satisfies test data", () => {
+      expect(day8("b", TEST_DATA)).toBe("61229");
     });
   });
 });
