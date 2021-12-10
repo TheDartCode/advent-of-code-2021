@@ -1,4 +1,4 @@
-import { maxValue, minValue, sortAsc, sumArray } from "../shared/helpers";
+import { maxValue, minValue, sortAsc, sumArray } from '../shared/helpers';
 
 export const findFuelForOptimalPosition = (
   positions: number[],

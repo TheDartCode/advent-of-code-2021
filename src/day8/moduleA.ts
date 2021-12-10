@@ -1,6 +1,6 @@
-import { sumArray } from "../shared/helpers";
-import { parseInput } from "./helpers";
-import { Segment } from "./types";
+import { sumArray } from '../shared/helpers';
+import { parseInput } from './helpers';
+import { Segment } from './types';
 
 const moduleA = (input: string) => {
   const data = parseInput(input);

@@ -1,23 +1,23 @@
-import { sumArray } from "../shared/helpers";
-import { parseInput } from "./helpers";
+import { sumArray } from '../shared/helpers';
+import { parseInput } from './helpers';
 
 const illegalCharacterScoring = {
-  ")": 3,
-  "]": 57,
-  "}": 1197,
-  ">": 25137,
+  ')': 3,
+  ']': 57,
+  '}': 1197,
+  '>': 25137,
 };
 
 const completionChars = {
-  "(": ")",
-  "[": "]",
-  "{": "}",
-  "<": ">",
+  '(': ')',
+  '[': ']',
+  '{': '}',
+  '<': '>',
 };
 
-const openingChars = ["(", "[", "{", "<"];
+const openingChars = ['(', '[', '{', '<'];
 
-const closingChars = [")", "]", "}", ">"];
+const closingChars = [')', ']', '}', '>'];
 
 const moduleA = (input: string) => {
   const lines = parseInput(input);

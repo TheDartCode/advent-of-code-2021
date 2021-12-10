@@ -1,4 +1,4 @@
-import { BingoGame, Board, GameStat, Row } from "./types";
+import { BingoGame, Board, GameStat, Row } from './types';
 
 const BOARD_SIZE = 5;
 
@@ -9,9 +9,9 @@ const parseBoardRow = (row: string): Row =>
     .map((i) => ({ value: parseInt(i), marked: false }));
 
 export const parseInput = (input: string): BingoGame => {
-  const lines = input.split("\n").filter((l) => l.length > 0);
-  const numbers = lines[0].split(",").map((i) => parseInt(i));
-  let boards: Board[] = [];
+  const lines = input.split('\n').filter((l) => l.length > 0);
+  const numbers = lines[0].split(',').map((i) => parseInt(i));
+  const boards: Board[] = [];
   for (let i = 1; i < lines.length; i += 5) {
     boards.push([
       parseBoardRow(lines[i]),
@@ -45,7 +45,7 @@ export const playGame = (
       });
     });
 
-    for (let board of game.boards) {
+    for (const board of game.boards) {
       for (let i = 0; i < BOARD_SIZE; i++) {
         if (board.map((row) => row[i]).every((cell) => cell.marked)) {
           if (!winningBoardStats.some((stat) => stat.board === board)) {
@@ -58,7 +58,7 @@ export const playGame = (
         }
       }
 
-      for (let row of board) {
+      for (const row of board) {
         if (row.every((cell) => cell.marked)) {
           if (!winningBoardStats.some((stat) => stat.board === board)) {
             winningBoardStats.push({ board, lastDrawnNumber });

@@ -1,10 +1,10 @@
-import { Operation, Instruction } from "./types";
+import { Operation, Instruction } from './types';
 
-const moduleA = (list: String) => {
-  const lines = list.split("\n").filter((line) => line.length > 0);
+const moduleA = (list: string) => {
+  const lines = list.split('\n').filter((line) => line.length > 0);
 
   const instructions = lines.map((line) => {
-    const parts = line.split(" ");
+    const parts = line.split(' ');
     return [parts[0], parseInt(parts[1])];
   }) as Instruction[];
 

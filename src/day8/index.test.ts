@@ -1,5 +1,5 @@
-import day8 from "./index";
-import { deduceConnections } from "./moduleB";
+import day8 from './index';
+import { deduceConnections } from './moduleB';
 
 const TEST_DATA = `be cfbegad cbdgef fgaecd cgeb fdcge agebfd fecdb fabcd edb | fdgacbe cefdb cefbgd gcbe
 edbfga begcd cbg gc gcadebf fbgde acbgfd abcde gfcbed gfec | fcgedb cgb dgebacf gc
@@ -12,29 +12,29 @@ bdfegc cbegaf gecbf dfcage bdacg ed bedf ced adcbefg gebcd | ed bcgafe cdgba cbg
 egadfb cdbfeg cegd fecab cgb gbdefca cg fgcdab egfdb bfceg | gbdfcae bgc cg cgb
 gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce`;
 
-describe("day8", () => {
-  describe("first part", () => {
-    it("satisfies test data", () => {
-      expect(day8("a", TEST_DATA)).toBe("26");
+describe('day8', () => {
+  describe('first part', () => {
+    it('satisfies test data', () => {
+      expect(day8('a', TEST_DATA)).toBe('26');
     });
   });
-  describe("#deduceConnections", () => {
-    it("finds the correct wire/segment connections", () => {
+  describe('#deduceConnections', () => {
+    it('finds the correct wire/segment connections', () => {
       expect(
         deduceConnections(
           [
-            "acedgfb",
-            "cdfbe",
-            "gcdfa",
-            "fbcad",
-            "dab",
-            "cefabd",
-            "cdfgeb",
-            "eafb",
-            "cagedb",
-            "ab",
+            'acedgfb',
+            'cdfbe',
+            'gcdfa',
+            'fbcad',
+            'dab',
+            'cefabd',
+            'cdfgeb',
+            'eafb',
+            'cagedb',
+            'ab',
           ],
-          ["cdfeb", "fcadb", "cdfeb", "cdbaf"]
+          ['cdfeb', 'fcadb', 'cdfeb', 'cdbaf']
         )
       ).toEqual({
         ab: 1,
@@ -50,9 +50,9 @@ describe("day8", () => {
       });
     });
   });
-  describe("second part", () => {
-    it("satisfies test data", () => {
-      expect(day8("b", TEST_DATA)).toBe("61229");
+  describe('second part', () => {
+    it('satisfies test data', () => {
+      expect(day8('b', TEST_DATA)).toBe('61229');
     });
   });
 });

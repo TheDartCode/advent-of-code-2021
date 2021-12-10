@@ -1,9 +1,9 @@
-import { Grid, GridRow, LineDescriptor, LineMode } from "./types";
+import { Grid, GridRow, LineDescriptor, LineMode } from './types';
 
 export const parseLine = (line: string): LineDescriptor => {
-  const [start, end] = line.split(" -> ");
-  const [x1, y1] = start.split(",").map((p) => parseInt(p));
-  const [x2, y2] = end.split(",").map((p) => parseInt(p));
+  const [start, end] = line.split(' -> ');
+  const [x1, y1] = start.split(',').map((p) => parseInt(p));
+  const [x2, y2] = end.split(',').map((p) => parseInt(p));
   return {
     x1,
     x2,
@@ -14,7 +14,7 @@ export const parseLine = (line: string): LineDescriptor => {
 
 export const parseInput = (input: string): LineDescriptor[] => {
   const lines = input
-    .split("\n")
+    .split('\n')
     .filter((l) => l.length > 0)
     .map((l) => parseLine(l));
   return lines;
@@ -37,7 +37,7 @@ export const drawDiagram = (
 
   const grid: GridRow[] = new Array(gridSize)
     .fill(null)
-    .map((_) => new Array(gridSize).fill("."));
+    .map(() => new Array(gridSize).fill('.'));
 
   lines.forEach(({ x1, y1, x2, y2 }) => {
     const isXIncrementing = x1 < x2;
@@ -61,7 +61,7 @@ export const drawDiagram = (
         isXIncrementing ? x <= x2 : x >= x2;
         isXIncrementing ? x++ : x--
       ) {
-        grid[y1][x] = grid[y1][x] === "." ? 1 : (grid[y1][x] as number) + 1;
+        grid[y1][x] = grid[y1][x] === '.' ? 1 : (grid[y1][x] as number) + 1;
       }
     } else if (mode === LineMode.Vertical) {
       for (
@@ -69,12 +69,12 @@ export const drawDiagram = (
         isYIncrementing ? y <= y2 : y >= y2;
         isYIncrementing ? y++ : y--
       ) {
-        grid[y][x1] = grid[y][x1] === "." ? 1 : (grid[y][x1] as number) + 1;
+        grid[y][x1] = grid[y][x1] === '.' ? 1 : (grid[y][x1] as number) + 1;
       }
     } else {
       for (let x = x1; isXIncrementing ? x <= x2 : x >= x2; ) {
         for (let y = y1; isYIncrementing ? y <= y2 : y >= y2; ) {
-          grid[y][x] = grid[y][x] === "." ? 1 : (grid[y][x] as number) + 1;
+          grid[y][x] = grid[y][x] === '.' ? 1 : (grid[y][x] as number) + 1;
           isXIncrementing ? x++ : x--;
           isYIncrementing ? y++ : y--;
         }

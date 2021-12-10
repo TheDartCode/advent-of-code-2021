@@ -12,7 +12,7 @@ const incrementPopulation = (
 };
 
 const moduleA = (input: string) => {
-  const list = input.split(",").map((n) => parseInt(n));
+  const list = input.split(',').map((n) => parseInt(n));
 
   const days = new Array(TOTAL_DAYS + 1).fill(0);
   days[0] = list.length;

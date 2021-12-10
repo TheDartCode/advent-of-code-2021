@@ -1,5 +1,5 @@
-import { parseInput } from "./helpers";
-import day4 from "./index";
+import { parseInput } from './helpers';
+import day4 from './index';
 
 const TEST_DATA = `7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,19,3,26,1
 
@@ -22,39 +22,14 @@ const TEST_DATA = `7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,
  2  0 12  3  7
 `;
 
-describe("day4", () => {
-  describe("helpers", () => {
-    describe("parseInput", () => {
-      it("parses game input correctly", () => {
+describe('day4', () => {
+  describe('helpers', () => {
+    describe('parseInput', () => {
+      it('parses game input correctly', () => {
         expect(parseInput(TEST_DATA)).toEqual({
           numbers: [
-            7,
-            4,
-            9,
-            5,
-            11,
-            17,
-            23,
-            2,
-            0,
-            14,
-            21,
-            24,
-            10,
-            16,
-            13,
-            6,
-            15,
-            25,
-            12,
-            22,
-            18,
-            20,
-            8,
-            19,
-            3,
-            26,
-            1,
+            7, 4, 9, 5, 11, 17, 23, 2, 0, 14, 21, 24, 10, 16, 13, 6, 15, 25, 12,
+            22, 18, 20, 8, 19, 3, 26, 1,
           ],
           boards: [
             [
@@ -173,14 +148,14 @@ describe("day4", () => {
       });
     });
   });
-  describe("first part", () => {
-    it("satisfies test data", () => {
-      expect(day4("a", TEST_DATA)).toBe("4512");
+  describe('first part', () => {
+    it('satisfies test data', () => {
+      expect(day4('a', TEST_DATA)).toBe('4512');
     });
   });
-  describe("second part", () => {
-    it("satisfies test data", () => {
-      expect(day4("b", TEST_DATA)).toBe("1924");
+  describe('second part', () => {
+    it('satisfies test data', () => {
+      expect(day4('b', TEST_DATA)).toBe('1924');
     });
   });
 });

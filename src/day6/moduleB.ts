@@ -1,7 +1,7 @@
 const TOTAL_DAYS = 256;
 
 const moduleB = (input: string) => {
-  const list = input.split(",").map((n) => parseInt(n));
+  const list = input.split(',').map((n) => parseInt(n));
 
   const fishGroups = new Array(9).fill(0);
   list.forEach((num) => fishGroups[num]++);

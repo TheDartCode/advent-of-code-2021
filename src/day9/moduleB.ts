@@ -1,5 +1,5 @@
-import { findLowPoints, parseInput } from "./helpers";
-import { Point } from "./types";
+import { findLowPoints, parseInput } from './helpers';
+import { Point } from './types';
 
 const walkBasin = (data: number[][], startPoint: Point): Point[] => {
   const frontier = [startPoint];

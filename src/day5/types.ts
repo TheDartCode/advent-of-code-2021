@@ -5,7 +5,7 @@ export type LineDescriptor = {
   y2: number;
 };
 
-export type GridPoint = "." | number;
+export type GridPoint = '.' | number;
 
 export type GridRow = GridPoint[];
 

@@ -1,4 +1,4 @@
-import { parseInput, playGame } from "./helpers";
+import { parseInput, playGame } from './helpers';
 
 const moduleB = (input: string) => {
   const game = parseInput(input);

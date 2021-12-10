@@ -1,8 +1,12 @@
-type DayFunc = (part: "a" | "b", data: string, extraOptions?: Object) => string;
+type DayFunc = (
+  part: 'a' | 'b',
+  data: string,
+  extraOptions?: unknown
+) => string;
 
 enum DayPart {
-  "a" = 'a',
-  "b" = 'b',
+  'a' = 'a',
+  'b' = 'b',
 }
 
-export { DayFunc, DayPart};
+export { DayFunc, DayPart };

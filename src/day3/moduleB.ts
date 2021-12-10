@@ -2,7 +2,7 @@ const calculateRatingValue = (
   input: string[],
   isUsingMostCommonBit: boolean
 ): number => {
-  let result = "";
+  let result = '';
   const wordSize = input[0].length;
 
   let wordsUnderSearch = [...input];
@@ -11,7 +11,7 @@ const calculateRatingValue = (
     let ones = 0;
     let zeros = 0;
     for (let index = 0; index < wordsUnderSearch.length; index++) {
-      if (wordsUnderSearch[index].charAt(i) === "1") {
+      if (wordsUnderSearch[index].charAt(i) === '1') {
         ones++;
       } else {
         zeros++;
@@ -19,11 +19,11 @@ const calculateRatingValue = (
     }
     result += isUsingMostCommonBit
       ? ones >= zeros
-        ? "1"
-        : "0"
+        ? '1'
+        : '0'
       : ones >= zeros
-      ? "0"
-      : "1";
+      ? '0'
+      : '1';
 
     wordsUnderSearch = wordsUnderSearch.filter((word) =>
       word.startsWith(result)
@@ -45,7 +45,7 @@ export const extractLifeSupportRating = (input: string[]): [number, number] => {
 };
 
 const moduleB = (list: string) => {
-  const items = list.split("\n").filter((l) => l.length > 0);
+  const items = list.split('\n').filter((l) => l.length > 0);
   const [oxygen, co2] = extractLifeSupportRating(items);
   return oxygen * co2;
 };

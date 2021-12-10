@@ -1,4 +1,4 @@
-import { findFuelForOptimalPosition } from "./helpers";
+import { findFuelForOptimalPosition } from './helpers';
 
 export const getFuelForPositionChange = (
   startingPosition: number,
@@ -8,7 +8,7 @@ export const getFuelForPositionChange = (
 };
 
 const moduleA = (input: string) => {
-  const positions = input.split(",").map((n) => parseInt(n));
+  const positions = input.split(',').map((n) => parseInt(n));
   return findFuelForOptimalPosition(positions, getFuelForPositionChange);
 };
 

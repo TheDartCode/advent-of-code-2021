@@ -1,10 +1,10 @@
-import { Point } from "./types";
+import { Point } from './types';
 
 export const parseInput = (input: string): number[][] => {
   return input
-    .split("\n")
+    .split('\n')
     .filter((l) => l.length > 0)
-    .map((l) => l.split("").map((c) => parseInt(c)));
+    .map((l) => l.split('').map((c) => parseInt(c)));
 };
 
 export const findLowPoints = (data: number[][]): Point[] => {
@@ -17,7 +17,7 @@ export const findLowPoints = (data: number[][]): Point[] => {
         x < data[y].length - 1 && data[y][x + 1],
         y > 0 && data[y - 1][x],
         y < data.length - 1 && data[y + 1][x],
-      ].filter((p) => typeof p === "number");
+      ].filter((p) => typeof p === 'number');
 
       if (neighbors.every((n) => n > data[y][x])) {
         lowPoints.push({ x, y, depth: data[y][x] });

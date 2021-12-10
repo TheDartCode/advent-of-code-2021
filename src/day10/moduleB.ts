@@ -1,23 +1,23 @@
-import { sortAsc, sumArray } from "../shared/helpers";
-import { parseInput } from "./helpers";
+import { sortAsc } from '../shared/helpers';
+import { parseInput } from './helpers';
 
 const characterScoring = {
-  ")": 1,
-  "]": 2,
-  "}": 3,
-  ">": 4,
+  ')': 1,
+  ']': 2,
+  '}': 3,
+  '>': 4,
 };
 
 const completionChars = {
-  "(": ")",
-  "[": "]",
-  "{": "}",
-  "<": ">",
+  '(': ')',
+  '[': ']',
+  '{': '}',
+  '<': '>',
 };
 
-const openingChars = ["(", "[", "{", "<"];
+const openingChars = ['(', '[', '{', '<'];
 
-const closingChars = [")", "]", "}", ">"];
+const closingChars = [')', ']', '}', '>'];
 
 const findCompletionStrings = (lines: string[][]): string[][] => {
   return lines

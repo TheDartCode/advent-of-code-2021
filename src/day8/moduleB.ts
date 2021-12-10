@@ -1,6 +1,6 @@
-import { sumArray } from "../shared/helpers";
-import { parseInput } from "./helpers";
-import { Segment, SegmentConfiguration } from "./types";
+import { sumArray } from '../shared/helpers';
+import { parseInput } from './helpers';
+import { Segment, SegmentConfiguration } from './types';
 
 const DIGIT_LENGTHS = {
   zero: 6,
@@ -20,14 +20,14 @@ const arrayDiff = (a: Segment[], b: Segment[]): Segment[] => {
 };
 
 const sortWireConfiguration = (wires: Segment[]): string => {
-  return wires.sort().join("");
+  return wires.sort().join('');
 };
 
 export const deduceConnections = (
   input: Segment[],
   output: Segment[]
 ): SegmentConfiguration => {
-  let digits = input.concat(output).map((s) => s.split(""));
+  let digits = input.concat(output).map((s) => s.split(''));
 
   const segments: Partial<SegmentConfiguration> = {};
 
@@ -101,10 +101,10 @@ const moduleB = (inputText: string) => {
     const segmentConfig = deduceConnections(input, output);
 
     const numberString = output.map(
-      (digit) => segmentConfig[sortWireConfiguration(digit.split(""))]
+      (digit) => segmentConfig[sortWireConfiguration(digit.split(''))]
     );
 
-    return parseInt(numberString.join(""));
+    return parseInt(numberString.join(''));
   });
 
   return sumArray(outputNumbers);
