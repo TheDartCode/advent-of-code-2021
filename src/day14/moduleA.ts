@@ -1,5 +1,10 @@
+import { parseInput, simulatePolymerChaining } from './helpers';
+
+const MAX_STEPS = 10;
+
 const moduleA = (input: string) => {
-  return input;
+  const { template, rules } = parseInput(input);
+  return simulatePolymerChaining(MAX_STEPS, template, rules);
 };
 
 export default moduleA;
