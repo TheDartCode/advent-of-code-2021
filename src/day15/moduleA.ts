@@ -1,5 +1,13 @@
+import {
+  createGraph,
+  getShortestDistanceToDestination,
+  parseInput,
+} from './helpers';
+
 const moduleA = (input: string) => {
-  return input;
+  const lines = parseInput(input);
+  const graph = createGraph(lines);
+  return getShortestDistanceToDestination(graph);
 };
 
 export default moduleA;
